@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Multiples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1321" translatesAutoresizingMaskIntoConstraints="NO" id="29U-d9-Ff8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Multiples" translatesAutoresizingMaskIntoConstraints="NO" id="mb0-OU-fiA">
+                                <rect key="frame" x="63" y="28" width="474" height="79"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap the pencil to add!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1R-0M-Dhc">
+                                <rect key="frame" x="82" y="115" width="437" height="80"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter a Multiple" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-zI-TFN">
+                                <rect key="frame" x="171" y="285" width="220" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Pas-f7-9uH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57X-5q-Q4m">
+                                <rect key="frame" x="101" y="302" width="324" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="Dic-BB-9qk"/>
+                                    <constraint firstAttribute="height" constant="185" id="SSm-EK-bW5"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="colorpencil"/>
+                                <connections>
+                                    <action selector="onPencilClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fmt-5r-vYX"/>
+                                    <action selector="onPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rup-4y-6Aj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-fb-pK4">
+                                <rect key="frame" x="156" y="316" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="7Av-pf-vJX"/>
+                                    <constraint firstAttribute="height" constant="250" id="U9p-EH-MFf"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="preview"/>
+                                <connections>
+                                    <action selector="onPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dDP-AP-uyI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R1R-0M-Dhc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="6sq-ke-0Ct"/>
+                            <constraint firstItem="mb0-OU-fiA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="Cmy-yG-3nI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R1R-0M-Dhc" secondAttribute="trailing" constant="70" id="KTQ-FO-InQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mb0-OU-fiA" secondAttribute="trailing" constant="35" id="MB9-Cl-ifL"/>
+                            <constraint firstItem="gJL-fb-pK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wgx-La-vuU"/>
+                            <constraint firstItem="R5D-zI-TFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZNe-l7-w8I"/>
+                            <constraint firstItem="R1R-0M-Dhc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZTS-3l-zzS"/>
+                            <constraint firstItem="57X-5q-Q4m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a6E-Yz-WY2"/>
+                            <constraint firstItem="29U-d9-Ff8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lDf-y7-hTm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="57X-5q-Q4m" secondAttribute="bottom" constant="150" id="lih-81-VnA"/>
+                            <constraint firstItem="R5D-zI-TFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rs1-KO-QOO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gJL-fb-pK4" secondAttribute="bottom" constant="40" id="v5D-hV-AtK"/>
+                            <constraint firstItem="29U-d9-Ff8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vL2-vZ-SoB"/>
+                            <constraint firstItem="mb0-OU-fiA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="wdN-bk-sbB"/>
+                            <constraint firstItem="R1R-0M-Dhc" firstAttribute="top" secondItem="mb0-OU-fiA" secondAttribute="bottom" constant="8" id="yEG-9q-AOk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mLogo" destination="mb0-OU-fiA" id="ar0-Au-sKo"/>
+                        <outlet property="multLbl" destination="R1R-0M-Dhc" id="tBy-yI-0xr"/>
+                        <outlet property="pencilBtn" destination="57X-5q-Q4m" id="XiK-YE-6kn"/>
+                        <outlet property="playBtn" destination="gJL-fb-pK4" id="qn1-3H-pHU"/>
+                        <outlet property="txtField" destination="R5D-zI-TFN" id="lrt-R7-ZJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="317"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1321" width="1200" height="1200"/>
+        <image name="Multiples" width="474" height="79"/>
+        <image name="colorpencil" width="1667" height="1667"/>
+        <image name="preview" width="1300" height="1300"/>
+    </resources>
 </document>
